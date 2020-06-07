@@ -30,6 +30,7 @@ public class Kurs {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "kurs_id", nullable = false)
     public Integer getKursId() {
         return kursId;

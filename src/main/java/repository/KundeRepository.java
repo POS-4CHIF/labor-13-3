@@ -94,7 +94,9 @@ public class KundeRepository implements AutoCloseable {
     public List<Kunde> findByKurs(Kurs kurs) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         try {
-            TypedQuery<Kunde> q = em.createQuery("select kunde from KursKunde k inner join Kunde kunde on k.kundeId = kunde.kundeId", Kunde.class);
+            TypedQuery<Kunde> q = em.createQuery("select kunde from KursKunde k inner join Kunde kunde on k.kundeId = kunde.kundeId where k.kursId = :kursId", Kunde.class);
+            q.setParameter("kursId", kurs.getKursId());
+
             List<Kunde> result = q.getResultList();
             em.close();
             return result;

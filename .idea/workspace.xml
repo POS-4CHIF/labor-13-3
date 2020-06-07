@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48064b77-a412-4e63-9e7c-5755d441345d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dozent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dozent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Kunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kunde.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Kurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/KursKunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/KursKunde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/KursKundePK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/KursKundePK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Kurstyp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kurstyp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/DozentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/DozentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/KundeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KundeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/KursKundeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KursKundeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/KurstypRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KurstypRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/db/KurssystemServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/db/KurssystemServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +189,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KurssystemServiceTest.testInsertKunde" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KurssystemServiceTest.testGetKundenFromKurs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="labor-13-3" />
       <extension name="coverage">
         <pattern>
@@ -205,7 +199,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="db" />
       <option name="MAIN_CLASS_NAME" value="db.KurssystemServiceTest" />
-      <option name="METHOD_NAME" value="testInsertKunde" />
+      <option name="METHOD_NAME" value="testGetKundenFromKurs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,10 +208,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.KurssystemServiceTest" />
+        <item itemvalue="JUnit.KurssystemServiceTest.testGetKundenFromKurs" />
         <item itemvalue="JUnit.KurssystemServiceTest.testDeleteKurstyp" />
         <item itemvalue="JUnit.KurssystemServiceTest.insertKursTyp" />
         <item itemvalue="JUnit.KurssystemServiceTest.testDeleteKunde" />
-        <item itemvalue="JUnit.KurssystemServiceTest.testInsertKunde" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +261,8 @@
       <workItem from="1591513856590" duration="737000" />
       <workItem from="1591514646179" duration="6511000" />
       <workItem from="1591522358448" duration="126000" />
-      <workItem from="1591522508969" duration="6815000" />
+      <workItem from="1591522508969" duration="8560000" />
+      <workItem from="1591532975280" duration="304000" />
     </task>
     <servers />
   </component>
@@ -357,37 +352,37 @@
     </state>
     <state x="740" y="336" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1584450660526" />
     <state x="740" y="322" width="424" height="511" key="FileChooserDialogImpl/0.28.1920.1016@0.28.1920.1016" timestamp="1584606418193" />
-    <state width="1874" height="308" key="GridCell.Tab.0.bottom" timestamp="1591531112900">
+    <state width="1874" height="308" key="GridCell.Tab.0.bottom" timestamp="1591532949984">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826332" />
     <state width="1877" height="407" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.bottom/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402354" />
-    <state width="1874" height="308" key="GridCell.Tab.0.bottom/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
+    <state width="1874" height="308" key="GridCell.Tab.0.bottom/0.32.1920.1010@0.32.1920.1010" timestamp="1591532949984" />
     <state width="2468" height="210" key="GridCell.Tab.0.bottom/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209606" />
-    <state width="1874" height="308" key="GridCell.Tab.0.center" timestamp="1591531112900">
+    <state width="1874" height="308" key="GridCell.Tab.0.center" timestamp="1591532949983">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826329" />
     <state width="1877" height="407" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.center/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402352" />
-    <state width="1874" height="308" key="GridCell.Tab.0.center/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
+    <state width="1874" height="308" key="GridCell.Tab.0.center/0.32.1920.1010@0.32.1920.1010" timestamp="1591532949983" />
     <state width="2468" height="210" key="GridCell.Tab.0.center/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209606" />
-    <state width="1874" height="308" key="GridCell.Tab.0.left" timestamp="1591531112900">
+    <state width="1874" height="308" key="GridCell.Tab.0.left" timestamp="1591532949982">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826327" />
     <state width="1877" height="407" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.left/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402350" />
-    <state width="1874" height="308" key="GridCell.Tab.0.left/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
+    <state width="1874" height="308" key="GridCell.Tab.0.left/0.32.1920.1010@0.32.1920.1010" timestamp="1591532949982" />
     <state width="2468" height="210" key="GridCell.Tab.0.left/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209605" />
-    <state width="1874" height="308" key="GridCell.Tab.0.right" timestamp="1591531112900">
+    <state width="1874" height="308" key="GridCell.Tab.0.right" timestamp="1591532949984">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826330" />
     <state width="1877" height="407" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.right/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402353" />
-    <state width="1874" height="308" key="GridCell.Tab.0.right/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
+    <state width="1874" height="308" key="GridCell.Tab.0.right/0.32.1920.1010@0.32.1920.1010" timestamp="1591532949984" />
     <state width="2468" height="210" key="GridCell.Tab.0.right/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209606" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1591514657821">
       <screen x="0" y="32" width="1920" height="1010" />
@@ -423,12 +418,12 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="143" y="237" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588002971394" />
-    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup" timestamp="1591530783420">
+    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup" timestamp="1591531851403">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state x="623" y="237" width="672" height="721" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588000652988" />
     <state x="623" y="251" width="672" height="678" key="search.everywhere.popup/0.28.1920.1016@0.28.1920.1016" timestamp="1585578197726" />
-    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup/0.32.1920.1010@0.32.1920.1010" timestamp="1591530783420" />
+    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup/0.32.1920.1010@0.32.1920.1010" timestamp="1591531851403" />
     <state x="2751" y="237" width="896" height="721" key="search.everywhere.popup/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590389223421" />
   </component>
 </project>
