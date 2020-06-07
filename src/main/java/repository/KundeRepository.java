@@ -48,7 +48,7 @@ public class KundeRepository implements AutoCloseable {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.remove(entity);
+            em.remove(em.merge(entity));
             tx.commit();
             return true;
         } catch (Exception ex) {

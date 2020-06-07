@@ -12,6 +12,14 @@ public class Kurstyp {
     private String typId;
     private String typBezeichnung;
 
+    public Kurstyp() {
+    }
+
+    public Kurstyp(String typId, String typBezeichnung) {
+        this.typId = typId;
+        this.typBezeichnung = typBezeichnung;
+    }
+
     @Id
     @NotBlank(message = "TypId may not be empty")
     @Column(name = "typ_id")

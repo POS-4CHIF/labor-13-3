@@ -13,6 +13,15 @@ public class Dozent {
     private String dozZuname;
     private String dozVorname;
 
+    public Dozent() {
+    }
+
+    public Dozent(int dozId, String dozZuname, String dozVorname) {
+        this.dozId = dozId;
+        this.dozZuname = dozZuname;
+        this.dozVorname = dozVorname;
+    }
+
     @Id
     @Column(name = "doz_id")
     public int getDozId() {

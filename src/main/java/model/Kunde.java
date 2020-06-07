@@ -13,7 +13,17 @@ public class Kunde {
     private String kundeZuname;
     private String kundeVorname;
 
+    public Kunde() {
+    }
+
+    public Kunde(String kundeZuname, String kundeVorname) {
+        this.kundeId = kundeId;
+        this.kundeZuname = kundeZuname;
+        this.kundeVorname = kundeVorname;
+    }
+
     @Id
+    @GeneratedValue
     @Column(name = "kunde_id")
     public int getKundeId() {
         return kundeId;
