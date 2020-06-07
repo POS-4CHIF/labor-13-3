@@ -69,7 +69,7 @@ public class KursKundeRepository implements AutoCloseable {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.persist(new KursKunde(kunde.getKundeId(), kurs.getKursId()));
+            em.persist(new KursKunde(kunde, kurs));
             tx.commit();
             return true;
         } catch (Exception ex) {
@@ -88,7 +88,7 @@ public class KursKundeRepository implements AutoCloseable {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.remove(new KursKunde(kunde.getKundeId(), kurs.getKursId()));
+            em.persist(new KursKunde(kunde, kurs));
             tx.commit();
             return true;
         } catch (Exception ex) {

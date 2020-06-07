@@ -8,26 +8,26 @@ import java.io.Serializable;
  * @author Michael König
  */
 public class KursKundePK implements Serializable {
-    private int kundeId;
-    private int kursId;
+    private Integer kundeId;
+    private Integer kursId;
 
-    @Column(name = "kunde_id")
+    @Column(name = "kunde_id", nullable = false)
     @Id
-    public int getKundeId() {
+    public Integer getKundeId() {
         return kundeId;
     }
 
-    public void setKundeId(int kundeId) {
+    public void setKundeId(Integer kundeId) {
         this.kundeId = kundeId;
     }
 
-    @Column(name = "kurs_id")
+    @Column(name = "kurs_id", nullable = false)
     @Id
-    public int getKursId() {
+    public Integer getKursId() {
         return kursId;
     }
 
-    public void setKursId(int kursId) {
+    public void setKursId(Integer kursId) {
         this.kursId = kursId;
     }
 
@@ -38,16 +38,16 @@ public class KursKundePK implements Serializable {
 
         KursKundePK that = (KursKundePK) o;
 
-        if (kundeId != that.kundeId) return false;
-        if (kursId != that.kursId) return false;
+        if (kundeId != null ? !kundeId.equals(that.kundeId) : that.kundeId != null) return false;
+        if (kursId != null ? !kursId.equals(that.kursId) : that.kursId != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = kundeId;
-        result = 31 * result + kursId;
+        int result = kundeId != null ? kundeId.hashCode() : 0;
+        result = 31 * result + (kursId != null ? kursId.hashCode() : 0);
         return result;
     }
 }

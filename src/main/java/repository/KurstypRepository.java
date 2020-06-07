@@ -2,7 +2,6 @@ package repository;
 
 import db.JPAUtil;
 import db.KursDBException;
-import model.Dozent;
 import model.Kurstyp;
 
 import javax.persistence.EntityManager;
@@ -51,7 +50,7 @@ public class KurstypRepository implements AutoCloseable {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.remove(entity);
+            em.remove(em.merge(entity));
             tx.commit();
             return true;
         } catch (Exception ex) {

@@ -8,6 +8,11 @@
         <class>model.Kurs</class>
         <class>model.KursKunde</class>
         <class>model.Kurstyp</class>
+        <class>model.Dozent</class>
+        <class>model.Kunde</class>
+        <class>model.Kurs</class>
+        <class>model.KursKunde</class>
+        <class>model.Kurstyp</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url"    value="jdbc:postgresql://localhost:5432/test" />

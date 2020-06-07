@@ -2,40 +2,40 @@ package model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Collection;
 
 /**
  * @author Michael König
  */
 @Entity
-@Table(name = "kunde", schema = "public", catalog = "test")
 public class Kunde {
-    private int kundeId;
+    private Integer kundeId;
     private String kundeZuname;
     private String kundeVorname;
+    private Collection<KursKunde> kursKundesByKundeId;
 
     public Kunde() {
     }
 
     public Kunde(String kundeZuname, String kundeVorname) {
-        this.kundeId = kundeId;
         this.kundeZuname = kundeZuname;
         this.kundeVorname = kundeVorname;
     }
 
     @Id
     @GeneratedValue
-    @Column(name = "kunde_id")
-    public int getKundeId() {
+    @Column(name = "kunde_id", nullable = false)
+    public Integer getKundeId() {
         return kundeId;
     }
 
-    public void setKundeId(int kundeId) {
+    public void setKundeId(Integer kundeId) {
         this.kundeId = kundeId;
     }
 
     @Basic
     @NotBlank(message = "Zuname may not be empty")
-    @Column(name = "kunde_zuname")
+    @Column(name = "kunde_zuname", nullable = true, length = 25)
     public String getKundeZuname() {
         return kundeZuname;
     }
@@ -46,7 +46,7 @@ public class Kunde {
 
     @Basic
     @NotBlank(message = "Vorname may not be empty")
-    @Column(name = "kunde_vorname")
+    @Column(name = "kunde_vorname", nullable = true, length = 25)
     public String getKundeVorname() {
         return kundeVorname;
     }
@@ -60,20 +60,29 @@ public class Kunde {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Kunde that = (Kunde) o;
+        Kunde kunde = (Kunde) o;
 
-        if (kundeId != that.kundeId) return false;
-        if (kundeZuname != null ? !kundeZuname.equals(that.kundeZuname) : that.kundeZuname != null) return false;
-        if (kundeVorname != null ? !kundeVorname.equals(that.kundeVorname) : that.kundeVorname != null) return false;
+        if (kundeId != null ? !kundeId.equals(kunde.kundeId) : kunde.kundeId != null) return false;
+        if (kundeZuname != null ? !kundeZuname.equals(kunde.kundeZuname) : kunde.kundeZuname != null) return false;
+        if (kundeVorname != null ? !kundeVorname.equals(kunde.kundeVorname) : kunde.kundeVorname != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = kundeId;
+        int result = kundeId != null ? kundeId.hashCode() : 0;
         result = 31 * result + (kundeZuname != null ? kundeZuname.hashCode() : 0);
         result = 31 * result + (kundeVorname != null ? kundeVorname.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "kundeByKundeId")
+    public Collection<KursKunde> getKursKundesByKundeId() {
+        return kursKundesByKundeId;
+    }
+
+    public void setKursKundesByKundeId(Collection<KursKunde> kursKundesByKundeId) {
+        this.kursKundesByKundeId = kursKundesByKundeId;
     }
 }

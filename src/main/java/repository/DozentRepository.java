@@ -3,8 +3,6 @@ package repository;
 import db.JPAUtil;
 import db.KursDBException;
 import model.Dozent;
-import model.Kunde;
-import model.Kurstyp;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

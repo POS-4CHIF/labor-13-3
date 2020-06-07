@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48064b77-a412-4e63-9e7c-5755d441345d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/labor-13-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/labor-13-3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Dozent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dozent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Kunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kunde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Kurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kurs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/KursKunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/KursKunde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/KursKundePK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/KursKundePK.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Kurstyp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kurstyp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/KundeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KundeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/DozentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/DozentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/KursKundeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KursKundeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/KurstypRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KurstypRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/db/KurssystemServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/db/KurssystemServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,14 +112,14 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="db" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="repository" />
-      <recent name="db" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/db" />
       <recent name="C:\Daten\ProjectSkriptum\src\main\resources\META-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="repository" />
+      <recent name="db" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -143,6 +147,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KurssystemServiceTest.insertKursTyp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="labor-13-3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="db" />
+      <option name="MAIN_CLASS_NAME" value="db.KurssystemServiceTest" />
+      <option name="METHOD_NAME" value="insertKursTyp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KurssystemServiceTest.testDeleteKunde" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="labor-13-3" />
       <extension name="coverage">
@@ -154,6 +174,22 @@
       <option name="PACKAGE_NAME" value="db" />
       <option name="MAIN_CLASS_NAME" value="db.KurssystemServiceTest" />
       <option name="METHOD_NAME" value="testDeleteKunde" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KurssystemServiceTest.testDeleteKurstyp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="labor-13-3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="db" />
+      <option name="MAIN_CLASS_NAME" value="db.KurssystemServiceTest" />
+      <option name="METHOD_NAME" value="testDeleteKurstyp" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,45 +211,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KurssystemServiceTest.testInsertRental" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="labor-13-3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="db" />
-      <option name="MAIN_CLASS_NAME" value="db.KurssystemServiceTest" />
-      <option name="METHOD_NAME" value="testInsertRental" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KurssystemServiceTest.testInsertStation2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="labor-13-3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="db" />
-      <option name="MAIN_CLASS_NAME" value="db.KurssystemServiceTest" />
-      <option name="METHOD_NAME" value="testInsertStation2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.KurssystemServiceTest" />
+        <item itemvalue="JUnit.KurssystemServiceTest.testDeleteKurstyp" />
+        <item itemvalue="JUnit.KurssystemServiceTest.insertKursTyp" />
         <item itemvalue="JUnit.KurssystemServiceTest.testDeleteKunde" />
         <item itemvalue="JUnit.KurssystemServiceTest.testInsertKunde" />
-        <item itemvalue="JUnit.KurssystemServiceTest.testInsertStation2" />
-        <item itemvalue="JUnit.KurssystemServiceTest.testInsertRental" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +267,7 @@
       <workItem from="1591513856590" duration="737000" />
       <workItem from="1591514646179" duration="6511000" />
       <workItem from="1591522358448" duration="126000" />
-      <workItem from="1591522508969" duration="2255000" />
+      <workItem from="1591522508969" duration="6815000" />
     </task>
     <servers />
   </component>
@@ -310,32 +314,33 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="3" y="507" width="956" height="535" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1587996351281" />
-    <state x="1100" y="143" width="374" height="564" key="#com.intellij.ide.util.MemberChooser" timestamp="1591519223361">
+    <state x="1100" y="143" width="374" height="564" key="#com.intellij.ide.util.MemberChooser" timestamp="1591530243794">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state x="1100" y="119" width="530" height="552" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1587988652278" />
     <state x="1112" y="242" width="554" height="622" key="#com.intellij.ide.util.MemberChooser/0.28.1920.1016@0.28.1920.1016" timestamp="1585579942450" />
-    <state x="1100" y="143" width="374" height="564" key="#com.intellij.ide.util.MemberChooser/0.32.1920.1010@0.32.1920.1010" timestamp="1591519223361" />
+    <state x="1100" y="143" width="374" height="564" key="#com.intellij.ide.util.MemberChooser/0.32.1920.1010@0.32.1920.1010" timestamp="1591530243794" />
     <state x="3387" y="119" width="554" height="566" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1589205835328" />
-    <state x="687" y="315" width="524" height="446" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1591514242262">
+    <state x="687" y="315" width="524" height="446" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1591527489334">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
-    <state x="687" y="315" width="524" height="446" key="#com.intellij.ide.util.PackageChooserDialog/0.32.1920.1010@0.32.1920.1010" timestamp="1591514242262" />
+    <state x="687" y="315" width="524" height="446" key="#com.intellij.ide.util.PackageChooserDialog/0.32.1920.1010@0.32.1920.1010" timestamp="1591527489334" />
     <state x="801" y="428" width="308" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584606005277">
       <screen x="0" y="28" width="1920" height="1016" />
     </state>
     <state x="801" y="428" width="308" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.28.1920.1016@0.28.1920.1016" timestamp="1584606005277" />
-    <state x="633" y="73" width="643" height="927" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1591514723139">
+    <state x="633" y="73" width="754" height="927" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1591530148473">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
-    <state x="633" y="73" width="643" height="927" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.32.1920.1010@0.32.1920.1010" timestamp="1591514723139" />
+    <state x="633" y="73" width="754" height="927" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.32.1920.1010@0.32.1920.1010" timestamp="1591530148473" />
     <state x="756" y="440" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584368179633">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="756" y="440" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1160@0.0.1920.1160" timestamp="1584368179633" />
-    <state x="1966" y="32" width="1007" height="1048" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589201018731">
-      <screen x="1920" y="0" width="2560" height="1080" />
+    <state x="35" y="32" width="769" height="1010" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591527433339">
+      <screen x="0" y="32" width="1920" height="1010" />
     </state>
+    <state x="35" y="32" width="769" height="1010" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.32.1920.1010@0.32.1920.1010" timestamp="1591527433339" />
     <state x="1966" y="32" width="1007" height="1048" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1589201018731" />
     <state x="212" y="262" width="524" height="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591513304990">
       <screen x="0" y="32" width="1920" height="1010" />
@@ -352,37 +357,37 @@
     </state>
     <state x="740" y="336" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1584450660526" />
     <state x="740" y="322" width="424" height="511" key="FileChooserDialogImpl/0.28.1920.1016@0.28.1920.1016" timestamp="1584606418193" />
-    <state width="1874" height="308" key="GridCell.Tab.0.bottom" timestamp="1591524844258">
+    <state width="1874" height="308" key="GridCell.Tab.0.bottom" timestamp="1591531112900">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826332" />
     <state width="1877" height="407" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.bottom/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402354" />
-    <state width="1874" height="308" key="GridCell.Tab.0.bottom/0.32.1920.1010@0.32.1920.1010" timestamp="1591524844258" />
+    <state width="1874" height="308" key="GridCell.Tab.0.bottom/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
     <state width="2468" height="210" key="GridCell.Tab.0.bottom/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209606" />
-    <state width="1874" height="308" key="GridCell.Tab.0.center" timestamp="1591524844257">
+    <state width="1874" height="308" key="GridCell.Tab.0.center" timestamp="1591531112900">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826329" />
     <state width="1877" height="407" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.center/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402352" />
-    <state width="1874" height="308" key="GridCell.Tab.0.center/0.32.1920.1010@0.32.1920.1010" timestamp="1591524844257" />
+    <state width="1874" height="308" key="GridCell.Tab.0.center/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
     <state width="2468" height="210" key="GridCell.Tab.0.center/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209606" />
-    <state width="1874" height="308" key="GridCell.Tab.0.left" timestamp="1591524844257">
+    <state width="1874" height="308" key="GridCell.Tab.0.left" timestamp="1591531112900">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826327" />
     <state width="1877" height="407" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.left/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402350" />
-    <state width="1874" height="308" key="GridCell.Tab.0.left/0.32.1920.1010@0.32.1920.1010" timestamp="1591524844257" />
+    <state width="1874" height="308" key="GridCell.Tab.0.left/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
     <state width="2468" height="210" key="GridCell.Tab.0.left/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209605" />
-    <state width="1874" height="308" key="GridCell.Tab.0.right" timestamp="1591524844258">
+    <state width="1874" height="308" key="GridCell.Tab.0.right" timestamp="1591531112900">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state width="910" height="134" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588003826330" />
     <state width="1877" height="407" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1584532784787" />
     <state width="1874" height="315" key="GridCell.Tab.0.right/0.28.1920.1016@0.28.1920.1016" timestamp="1585580402353" />
-    <state width="1874" height="308" key="GridCell.Tab.0.right/0.32.1920.1010@0.32.1920.1010" timestamp="1591524844258" />
+    <state width="1874" height="308" key="GridCell.Tab.0.right/0.32.1920.1010@0.32.1920.1010" timestamp="1591531112900" />
     <state width="2468" height="210" key="GridCell.Tab.0.right/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590393209606" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1591514657821">
       <screen x="0" y="32" width="1920" height="1010" />
@@ -401,10 +406,10 @@
       <screen x="0" y="28" width="1920" height="1016" />
     </state>
     <state x="734" y="268" width="442" height="533" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.28.1920.1016@0.28.1920.1016" timestamp="1584615211618" />
-    <state x="711" y="185" width="710" height="733" key="find.popup" timestamp="1591523149920">
+    <state x="711" y="185" width="869" height="733" key="find.popup" timestamp="1591530626951">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
-    <state x="711" y="185" width="710" height="733" key="find.popup/0.32.1920.1010@0.32.1920.1010" timestamp="1591523149920" />
+    <state x="711" y="185" width="869" height="733" key="find.popup/0.32.1920.1010@0.32.1920.1010" timestamp="1591530626951" />
     <state x="2868" y="164" width="710" height="783" key="find.popup/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590389913150" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1589198971099">
       <screen x="1920" y="0" width="2560" height="1080" />
@@ -418,12 +423,12 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="143" y="237" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588002971394" />
-    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup" timestamp="1591524618398">
+    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup" timestamp="1591530783420">
       <screen x="0" y="32" width="1920" height="1010" />
     </state>
     <state x="623" y="237" width="672" height="721" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588000652988" />
     <state x="623" y="251" width="672" height="678" key="search.everywhere.popup/0.28.1920.1016@0.28.1920.1016" timestamp="1585578197726" />
-    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup/0.32.1920.1010@0.32.1920.1010" timestamp="1591524618398" />
+    <state x="623" y="254" width="672" height="675" key="search.everywhere.popup/0.32.1920.1010@0.32.1920.1010" timestamp="1591530783420" />
     <state x="2751" y="237" width="896" height="721" key="search.everywhere.popup/1920.0.2560.1080/1920.1080.1920.1080/0.32.1920.1048@1920.0.2560.1080" timestamp="1590389223421" />
   </component>
 </project>

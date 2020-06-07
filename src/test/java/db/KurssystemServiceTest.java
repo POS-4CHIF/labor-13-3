@@ -1,11 +1,9 @@
 package db;
 
 import model.Kunde;
+import model.Kurs;
+import model.Kurstyp;
 import org.junit.jupiter.api.*;
-
-import javax.persistence.EntityManager;
-
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,9 +49,7 @@ public class KurssystemServiceTest {
         long oldCount = service.getKunden().size();
         service.insertKunde(new Kunde("König", "Michael"));
         long newCount = service.getKunden().size();
-        assertEquals(oldCount+1, newCount);
-
-
+        assertEquals(oldCount + 1, newCount);
     }
 
     @Test
@@ -63,11 +59,41 @@ public class KurssystemServiceTest {
         long oldCount = service.getKunden().size();
         service.deleteKunde(koenig);
         long newCount = service.getKunden().size();
-        assertEquals(oldCount-1, newCount);
+        assertEquals(oldCount - 1, newCount);
     }
+
+    @Test
+    @Order(7)
+    void insertKursTyp() {
+        long oldCount = service.getKurstypen().size();
+        service.insertKurstyp(new Kurstyp("G", "Geschichte"));
+        long newCount = service.getKurstypen().size();
+        assertEquals(oldCount + 1, newCount);
+    }
+
+    @Test
+    @Order(8)
+    void testDeleteKurstyp() {
+        Kurstyp geschichte = service.getKurstypen().stream().filter(kurstyp -> kurstyp.getTypId().equals("G")).findFirst().get();
+        long oldCount = service.getKurstypen().size();
+        service.deleteKurstyp(geschichte);
+        long newCount = service.getKurstypen().size();
+        assertEquals(oldCount - 1, newCount);
+    }
+
+//    @Test
+//    @Order(9)
+//    void insertKurs() {
+//        long oldCount = service.getKurse().size();
+//        service.insertKurs(new Kurs("Kubernetes", ));
+//        long newCount = service.getKurstypen().size();
+//        assertEquals(oldCount + 1, newCount);
+//    }
 
     @AfterAll
     static void afterAll() {
         service.close();
     }
+
+
 }

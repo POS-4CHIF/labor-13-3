@@ -1,42 +1,44 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-/**
- * @author Michael König
- */
 @Entity
-@Table(name = "kurs_kunde", schema = "public", catalog = "test")
+@Table(name = "kurs_kunde")
 @IdClass(KursKundePK.class)
 public class KursKunde {
-    private int kundeId;
-    private int kursId;
+    private Integer kundeId;
+    private Integer kursId;
+    private Kunde kundeByKundeId;
+    private Kurs kursByKursId;
 
     public KursKunde() {
     }
 
-    public KursKunde(int kundeId, int kursId) {
-        this.kundeId = kundeId;
-        this.kursId = kursId;
+    public KursKunde(Kunde kunde, Kurs kurs) {
+        setKundeId(kunde.getKundeId());
+        setKursId(kurs.getKursId());
+        setKundeByKundeId(kunde);
+        setKursByKursId(kurs);
     }
 
     @Id
-    @Column(name = "kunde_id")
-    public int getKundeId() {
+    @Column(name = "kunde_id", nullable = false)
+    public Integer getKundeId() {
         return kundeId;
     }
 
-    public void setKundeId(int kundeId) {
+    public void setKundeId(Integer kundeId) {
         this.kundeId = kundeId;
     }
 
     @Id
-    @Column(name = "kurs_id")
-    public int getKursId() {
+    @Column(name = "kurs_id", nullable = false)
+    public Integer getKursId() {
         return kursId;
     }
 
-    public void setKursId(int kursId) {
+    public void setKursId(Integer kursId) {
         this.kursId = kursId;
     }
 
@@ -44,19 +46,43 @@ public class KursKunde {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         KursKunde that = (KursKunde) o;
-
-        if (kundeId != that.kundeId) return false;
-        if (kursId != that.kursId) return false;
-
-        return true;
+        return Objects.equals(kundeId, that.kundeId) &&
+                Objects.equals(kursId, that.kursId);
     }
 
     @Override
     public int hashCode() {
-        int result = kundeId;
-        result = 31 * result + kursId;
-        return result;
+        return Objects.hash(kundeId, kursId);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "kunde_id", referencedColumnName = "kunde_id", nullable = false, insertable = false, updatable = false)
+    public Kunde getKundeByKundeId() {
+        return kundeByKundeId;
+    }
+
+    public void setKundeByKundeId(Kunde kundeByKundeId) {
+        this.kundeByKundeId = kundeByKundeId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "kurs_id", referencedColumnName = "kurs_id", nullable = false, insertable = false, updatable = false)
+    public Kurs getKursByKursId() {
+        return kursByKursId;
+    }
+
+    public void setKursByKursId(Kurs kursByKursId) {
+        this.kursByKursId = kursByKursId;
+    }
+
+    @Override
+    public String toString() {
+        return "KursKunde{" +
+                "kundeId=" + kundeId +
+                ", kursId=" + kursId +
+                ", kundeByKundeId=" + kundeByKundeId +
+                ", kursByKursId=" + kursByKursId +
+                '}';
     }
 }
