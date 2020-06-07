@@ -24,33 +24,32 @@ public class KursRepository implements AutoCloseable {
         return INSTANCE;
     }
 
-    public boolean persist(Kurs entity) throws KursDBException {
+    public void persist(Kurs entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.persist(entity);
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-            return false;
+            throw new KursDBException(ex.getMessage());
+
         } finally {
             em.close();
         }
     }
 
-    public boolean remove(Kurs entity) throws KursDBException {
+    public void remove(Kurs entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.remove(entity);
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
@@ -81,7 +80,7 @@ public class KursRepository implements AutoCloseable {
     public List<Kurs> findAll() throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         try {
-            TypedQuery<Kurs> q = em.createQuery("select k from Kurs k", Kurs.class);
+            TypedQuery<Kurs> q = em.createQuery("select k from Kurs k order by kursId", Kurs.class);
             List<Kurs> result = q.getResultList();
             em.close();
             return result;

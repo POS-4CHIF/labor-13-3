@@ -24,33 +24,33 @@ public class KundeRepository implements AutoCloseable {
         return INSTANCE;
     }
 
-    public boolean persist(Kunde entity) throws KursDBException {
+    public void persist(Kunde entity) throws KursDBException {
+        if(entity.getKundeId() != null)
+            throw new IllegalArgumentException("Entity already has an ID set!");
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.persist(entity);
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-            return false;
+            throw new KursDBException(ex.getMessage());
         } finally {
             em.close();
         }
     }
 
-    public boolean remove(Kunde entity) throws KursDBException {
+    public void remove(Kunde entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.remove(em.merge(entity));
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
@@ -92,11 +92,13 @@ public class KundeRepository implements AutoCloseable {
     }
 
     public List<Kunde> findByKurs(Kurs kurs) throws KursDBException {
+        if(kurs == null || kurs.getKursId() == null) {
+            throw new IllegalArgumentException("Kurs and Kurs ID may not be null");
+        }
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         try {
             TypedQuery<Kunde> q = em.createQuery("select kunde from KursKunde k inner join Kunde kunde on k.kundeId = kunde.kundeId where k.kursId = :kursId", Kunde.class);
             q.setParameter("kursId", kurs.getKursId());
-
             List<Kunde> result = q.getResultList();
             em.close();
             return result;

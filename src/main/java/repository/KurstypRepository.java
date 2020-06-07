@@ -26,33 +26,31 @@ public class KurstypRepository implements AutoCloseable {
 
     // Speichert eine neue Station in der Datenbank
     // liefert true bei Erfolg, false bei einem Fehler
-    public boolean persist(Kurstyp entity) throws KursDBException {
+    public void persist(Kurstyp entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.persist(entity);
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-            return false;
+            throw new KursDBException(ex.getMessage());
         } finally {
             em.close();
         }
     }
 
-    public boolean remove(Kurstyp entity) throws KursDBException {
+    public void remove(Kurstyp entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.remove(em.merge(entity));
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
@@ -82,7 +80,7 @@ public class KurstypRepository implements AutoCloseable {
     public List<Kurstyp> findAll() throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         try {
-            TypedQuery<Kurstyp> q = em.createQuery("select k from Kurstyp k", Kurstyp.class);
+            TypedQuery<Kurstyp> q = em.createQuery("select k from Kurstyp k order by typId", Kurstyp.class);
             List<Kurstyp> result = q.getResultList();
             em.close();
             return result;

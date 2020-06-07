@@ -24,33 +24,31 @@ public class DozentRepository implements AutoCloseable {
         return INSTANCE;
     }
 
-    public boolean persist(Dozent entity) throws KursDBException {
+    public void persist(Dozent entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.persist(entity);
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-            return false;
+            throw new KursDBException(ex.getMessage());
         } finally {
             em.close();
         }
     }
 
-    public boolean remove(Dozent entity) throws KursDBException {
+    public void remove(Dozent entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.remove(entity);
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
@@ -65,7 +63,7 @@ public class DozentRepository implements AutoCloseable {
     public Dozent find(int id) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         try {
-            TypedQuery<Dozent> q = em.createQuery("select d from Dozent d where dozId = :id", Dozent.class);
+            TypedQuery<Dozent> q = em.createQuery("select d from Dozent d where dozId = :id order by dozId", Dozent.class);
             q.setParameter("id", id);
             Dozent result = q.getSingleResult();
             em.close();

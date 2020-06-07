@@ -26,33 +26,13 @@ public class KursKundeRepository implements AutoCloseable {
         return INSTANCE;
     }
 
-    public boolean persist(KursKunde entity) throws KursDBException {
+    public void persist(KursKunde entity) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.persist(entity);
             tx.commit();
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-            return false;
-        } finally {
-            em.close();
-        }
-    }
-
-    public boolean remove(KursKunde entity) throws KursDBException {
-        EntityManager em = JPAUtil.getEMF().createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        try {
-            tx.begin();
-            em.remove(entity);
-            tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
@@ -64,39 +44,55 @@ public class KursKundeRepository implements AutoCloseable {
         }
     }
 
-    public boolean bucheKurs(Kunde kunde, Kurs kurs) throws KursDBException {
+    public void remove(KursKunde entity) throws KursDBException {
+        EntityManager em = JPAUtil.getEMF().createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            em.remove(entity);
+            tx.commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            if (tx.isActive()) {
+                tx.rollback();
+            }
+            throw new KursDBException(ex.getMessage());
+        } finally {
+            em.close();
+        }
+    }
+
+    public void bucheKurs(Kunde kunde, Kurs kurs) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.persist(new KursKunde(kunde, kurs));
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-            return false;
+            throw new KursDBException(ex.getMessage());
         } finally {
             em.close();
         }
     }
 
-    public boolean stoniereKurs(Kunde kunde, Kurs kurs) throws KursDBException {
+    public void stoniereKurs(Kunde kunde, Kurs kurs) throws KursDBException {
         EntityManager em = JPAUtil.getEMF().createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             em.remove(em.merge(new KursKunde(kunde, kurs)));
             tx.commit();
-            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-            return false;
+            throw new KursDBException(ex.getMessage());
         } finally {
             em.close();
         }
